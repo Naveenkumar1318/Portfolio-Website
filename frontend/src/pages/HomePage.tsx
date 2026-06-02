@@ -89,7 +89,7 @@ function HomePage() {
           <div className="stats">
 
             <div className="stat-card">
-              <h3>10+</h3>
+              <h3>4+</h3>
               <p>Projects</p>
             </div>
 
