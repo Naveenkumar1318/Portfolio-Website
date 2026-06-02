@@ -56,7 +56,7 @@ function ProjectsContent() {
             <div className="project-links">
 
               <a
-                href="https://college-project-portal-fxxh29yu7-naveenkumar1318s-projects.vercel.app/"
+                href="https://college-project-portal.vercel.app/"
                 target="_blank"
                 rel="noreferrer"
               >
