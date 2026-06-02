@@ -16,7 +16,7 @@ function ExperienceContent() {
 
         <p>
           Professional internship experience and
-          hands-on industry exposure in backend
+          hands-on industry exposure in software
           development and analytics solutions.
         </p>
       </div>
@@ -35,7 +35,7 @@ function ExperienceContent() {
 
             <div className="experience-top">
 
-              <h2>Backend Developer Intern</h2>
+              <h2>Software Developer Intern</h2>
 
               <span className="experience-badge">
                 Internship
@@ -48,7 +48,7 @@ function ExperienceContent() {
             </h3>
 
             <p className="experience-summary">
-              Worked as a Backend Developer Intern
+              Worked as a Software Developer Intern
               contributing to a Business Intelligence
               Analytics platform focused on secure
               data processing, reporting and
