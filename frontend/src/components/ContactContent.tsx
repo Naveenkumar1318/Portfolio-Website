@@ -136,7 +136,7 @@ function ContactContent() {
             <FiMapPin size={24} />
             <div>
               <h3>Location</h3>
-              <p>Tamil Nadu, India</p>
+              <p>Hosur, Tamil Nadu, India</p>
             </div>
           </div>
         </div>

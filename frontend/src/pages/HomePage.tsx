@@ -1,5 +1,5 @@
 import MainLayout from "../layouts/MainLayout";
-import heroImage from "../assets/naveen profile pic.png";
+import heroImage from "../assets/naveen_profile_pic-removebg-preview.png";
 
 import {
   FaEye,
@@ -42,9 +42,9 @@ function HomePage() {
             <span className="highlight">
               <Typewriter
                 words={[
+                  "Full-Stack Developer",
                   "Frontend Developer",
                   "Backend Developer",
-                  "Full-Stack Developer",
                   "React Developer"
                 ]}
                 loop={0}
@@ -67,7 +67,7 @@ function HomePage() {
           <div className="hero-buttons">
 
             <a
-              href="/Resume.pdf"
+              href="/NaveenKumar_Software_Developer_Resume.pdf"
               target="_blank"
               rel="noreferrer"
               className="primary-btn"
