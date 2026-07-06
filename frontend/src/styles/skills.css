@@ -111,11 +111,11 @@
 }
 
 .tech-card {
-  min-height: 85px;
+  height: 110px;
 
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
 
-  border: 1px solid rgba(59,130,246,0.15);
+  border: 1px solid rgba(59, 130, 246, 0.15);
 
   border-radius: 14px;
 
@@ -131,22 +131,17 @@
 
   padding: 10px;
 
-  transition: all 0.3s ease;
+  transition: all 0.35s ease;
 }
 
 .tech-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-8px) scale(1.04);
 
-  border-color: #3b82f6;
+  border-color: #60a5fa;
 
   box-shadow:
-    0 0 18px rgba(59,130,246,0.25);
-}
-
-.tech-card svg {
-  font-size: 30px;
-
-  color: #3b82f6;
+    0 0 12px rgba(59, 130, 246, 0.25),
+    0 0 30px rgba(59, 130, 246, 0.2);
 }
 
 .tech-card span {
@@ -212,9 +207,15 @@
     min-height: 75px;
   }
 
-  .tech-card svg {
-    font-size: 26px;
-  }
+ .tech-card svg {
+  font-size: 30px;
+
+  transition: transform 0.35s ease;
+}
+
+.tech-card:hover svg {
+  transform: scale(1.15);
+}
 
   .tech-card span {
     font-size: 14px;

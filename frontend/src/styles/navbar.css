@@ -1,5 +1,5 @@
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000;
 
@@ -17,7 +17,17 @@
 
   border-bottom: 1px solid rgba(59, 130, 246, 0.15);
 }
+.show {
+  transform: translateY(0);
+}
 
+.hide {
+  transform: translateY(-120%);
+}
+
+.navbar {
+  transition: transform 0.35s ease-in-out;
+}
 .logo a {
   font-size: 2rem;
   font-weight: 700;

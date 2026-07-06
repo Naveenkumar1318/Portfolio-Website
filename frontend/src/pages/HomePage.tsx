@@ -4,13 +4,13 @@ import heroImage from "../assets/naveen_profile_pic-removebg-preview.png";
 import {
   FaEye,
   FaEnvelope,
+  FaHtml5,
+  FaJs,
   FaReact,
-  FaNodeJs
 } from "react-icons/fa";
 
 import {
-  SiTypescript,
-  SiPostgresql
+  SiMongodb
 } from "react-icons/si";
 
 import { Typewriter } from "react-simple-typewriter";
@@ -109,21 +109,21 @@ function HomePage() {
 
         <div className="hero-image">
 
-          <div className="floating-icon react">
-            <FaReact />
-          </div>
+<div className="floating-icon html">
+  <FaHtml5 color="#E34F26" />
+</div>
 
-          <div className="floating-icon node">
-            <FaNodeJs />
-          </div>
+<div className="floating-icon js">
+  <FaJs color="#F7DF1E" />
+</div>
 
-          <div className="floating-icon ts">
-            <SiTypescript />
-          </div>
+<div className="floating-icon react">
+  <FaReact color="#61DAFB" />
+</div>
 
-          <div className="floating-icon db">
-            <SiPostgresql />
-          </div>
+<div className="floating-icon mongo">
+  <SiMongodb color="#47A248" />
+</div>
 
           <div className="image-wrapper">
             <img

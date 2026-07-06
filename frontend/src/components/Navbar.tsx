@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
   FaDownload,
@@ -13,8 +13,31 @@ function Navbar() {
   const [menuOpen, setMenuOpen] =
     useState(false);
 
+  const [showNavbar, setShowNavbar] = useState(true);
+const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+  const handleScroll = () => {
+    if (window.scrollY < 80) {
+      setShowNavbar(true);
+    } else if (window.scrollY > lastScrollY) {
+      setShowNavbar(false);
+    } else {
+      setShowNavbar(true);
+    }
+
+    setLastScrollY(window.scrollY);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, [lastScrollY]);
+
   return (
-    <nav className="navbar">
+    <nav className={showNavbar ? "navbar show" : "navbar hide"}>
 
       <div className="logo">
         <NavLink to="/">

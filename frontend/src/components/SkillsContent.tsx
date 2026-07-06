@@ -8,7 +8,7 @@ import {
   FaPython,
   FaPhp,
   FaGitAlt,
-  FaGithub
+  FaGithub,
 } from "react-icons/fa";
 
 import {
@@ -18,21 +18,23 @@ import {
   SiPostgresql,
   SiMysql,
   SiMongodb,
-  SiPostman
+  SiPostman,
 } from "react-icons/si";
+
+import { VscVscode } from "react-icons/vsc";
+import { TbApi } from "react-icons/tb";
 
 import "../styles/skills.css";
 
 function SkillsContent() {
   return (
     <section className="skills-section">
-
       <div className="skills-header">
         <h1>Technical Skills</h1>
 
         <p>
-          Technologies, frameworks, databases and tools
-          I use to build scalable modern web applications.
+          Technologies, frameworks, databases and tools I use to build scalable
+          modern web applications.
         </p>
       </div>
 
@@ -44,28 +46,27 @@ function SkillsContent() {
         <div className="divider"></div>
 
         <div className="category-grid">
-
           <div className="category-card">
             <h3>Languages</h3>
 
             <div className="tech-list">
               <div className="tech-card">
-                <FaHtml5 />
+                <FaHtml5 color="#E34F26" />
                 <span>HTML5</span>
               </div>
 
               <div className="tech-card">
-                <FaCss3Alt />
+                <FaCss3Alt color="#1572B6" />
                 <span>CSS3</span>
               </div>
 
               <div className="tech-card">
-                <FaJs />
+                <FaJs color="#F7DF1E" />
                 <span>JavaScript</span>
               </div>
 
               <div className="tech-card">
-                <SiTypescript />
+                <SiTypescript color="#3178C6" />
                 <span>TypeScript</span>
               </div>
             </div>
@@ -76,12 +77,12 @@ function SkillsContent() {
 
             <div className="tech-list">
               <div className="tech-card">
-                <FaReact />
+                <FaReact color="#61DAFB" />
                 <span>React.js</span>
               </div>
 
               <div className="tech-card">
-                <FaVuejs />
+                <FaVuejs color="#42B883" />
                 <span>Vue.js</span>
               </div>
             </div>
@@ -92,17 +93,16 @@ function SkillsContent() {
 
             <div className="tech-list">
               <div className="tech-card">
-                <SiTailwindcss />
+                <SiTailwindcss color="#06B6D4" />
                 <span>Tailwind CSS</span>
               </div>
 
               <div className="tech-card">
-                <SiBootstrap />
+                <SiBootstrap color="#7952B3" />
                 <span>Bootstrap</span>
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -114,23 +114,22 @@ function SkillsContent() {
         <div className="divider"></div>
 
         <div className="category-grid">
-
           <div className="category-card">
             <h3>Languages</h3>
 
             <div className="tech-list">
               <div className="tech-card">
-                <FaNodeJs />
+                <FaNodeJs color="#5FA04E" />
                 <span>Node.js</span>
               </div>
 
               <div className="tech-card">
-                <FaPython />
+                <FaPython color="#3776AB" />
                 <span>Python</span>
               </div>
 
               <div className="tech-card">
-                <FaPhp />
+                <FaPhp color="#777BB4" />
                 <span>PHP</span>
               </div>
             </div>
@@ -141,17 +140,17 @@ function SkillsContent() {
 
             <div className="tech-list">
               <div className="tech-card">
-                <SiPostgresql />
+                <SiPostgresql color="#4169E1" />
                 <span>PostgreSQL</span>
               </div>
 
               <div className="tech-card">
-                <SiMysql />
+                <SiMysql color="#4479A1" />
                 <span>MySQL</span>
               </div>
 
               <div className="tech-card">
-                <SiMongodb />
+                <SiMongodb color="#47A248" />
                 <span>MongoDB</span>
               </div>
             </div>
@@ -160,13 +159,14 @@ function SkillsContent() {
           <div className="category-card">
             <h3>API</h3>
 
-            <div className="tech-list">
-              <div className="tech-card">
-                <span>REST API</span>
-              </div>
+              <div className="tech-list">
+                <div className="tech-card">
+                  <TbApi color="#38BDF8" />
+                  <span>REST API</span>
+                  
+                </div>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -178,29 +178,27 @@ function SkillsContent() {
         <div className="divider"></div>
 
         <div className="tools-grid">
-
           <div className="tech-card">
-            <FaGitAlt />
+            <FaGitAlt color="#F05032" />
             <span>Git</span>
           </div>
 
           <div className="tech-card">
-            <FaGithub />
+            <FaGithub color="#FFFFFF" />
             <span>GitHub</span>
           </div>
 
           <div className="tech-card">
+            <VscVscode color="#007ACC" />
             <span>VS Code</span>
           </div>
 
           <div className="tech-card">
-            <SiPostman />
+            <SiPostman color="#FF6C37" />
             <span>Postman</span>
           </div>
-
         </div>
       </div>
-
     </section>
   );
 }
