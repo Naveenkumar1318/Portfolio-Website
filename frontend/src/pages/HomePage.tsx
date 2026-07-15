@@ -67,7 +67,7 @@ function HomePage() {
           <div className="hero-buttons">
 
             <a
-              href="/NaveenKumar_Software_Developer_Resume.pdf"
+              href="/Naveenkumar_B_Resume.pdf"
               target="_blank"
               rel="noreferrer"
               className="primary-btn"
