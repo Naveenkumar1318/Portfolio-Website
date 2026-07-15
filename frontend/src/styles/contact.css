@@ -1,0 +1,176 @@
+.contact-section {
+  min-height: 100vh;
+
+  padding: 80px 20px;
+
+  background: linear-gradient(
+    135deg,
+    #020617,
+    #0f172a,
+    #1e3a8a
+  );
+
+  color: white;
+}
+
+.contact-header {
+  text-align: center;
+
+  margin-bottom: 60px;
+}
+
+.contact-header h1 {
+  font-size: 56px;
+
+  margin-bottom: 16px;
+}
+
+.contact-header p {
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  color: #cbd5e1;
+
+  line-height: 1.7;
+}
+
+.contact-grid {
+  max-width: 1300px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 40px;
+}
+
+.contact-info {
+  display: grid;
+
+  gap: 20px;
+}
+
+.contact-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 24px;
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.05);
+
+  backdrop-filter: blur(12px);
+
+  transition: 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #3b82f6;
+
+  box-shadow: 0 0 25px rgba(59,130,246,0.4);
+}
+
+.contact-card h3 {
+  margin-bottom: 4px;
+}
+
+.contact-card p {
+  color: #cbd5e1;
+}
+
+.contact-form {
+  padding: 32px;
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.05);
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.contact-form h2 {
+  margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 16px;
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.05);
+
+  color: white;
+
+  font-size: 16px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+
+  border-color: #3b82f6;
+
+  box-shadow: 0 0 15px rgba(59,130,246,0.3);
+}
+
+.contact-form button {
+  padding: 16px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #3b82f6;
+
+  color: white;
+
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #2563eb;
+
+  transform: translateY(-2px);
+}
+
+.error-text {
+  color: #ef4444;
+}
+
+.success-text {
+  color: #22c55e;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-header h1 {
+    font-size: 42px;
+  }
+}
