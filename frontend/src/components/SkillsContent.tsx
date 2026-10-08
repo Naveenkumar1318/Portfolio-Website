@@ -6,7 +6,6 @@ import {
   FaReact,
   FaPython,
   FaPhp,
-  FaGitAlt,
   FaGithub,
   FaLayerGroup,
   FaServer,
@@ -30,12 +29,9 @@ import {
   SiFlask,
   SiSupabase,
   SiVercel,
-  SiRender,
   SiPandas,
-  SiOpencv,
 } from "react-icons/si";
 
-import { VscVscode } from "react-icons/vsc";
 import { TbApi, TbBrandOauth } from "react-icons/tb";
 
 import "../styles/skills.css";

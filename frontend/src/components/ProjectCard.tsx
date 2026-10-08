@@ -26,21 +26,25 @@ function ProjectCard({ project }: Props) {
         </div>
 
         <div className="project-links">
-          <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+          )}
 
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Live Demo
-          </a>
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Live Demo
+            </a>
+          )}
         </div>
       </div>
     </div>

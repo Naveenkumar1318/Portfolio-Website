@@ -9,7 +9,6 @@ import {
   FaGraduationCap,
   FaCode,
   FaEnvelope,
-  FaPhoneAlt,
   FaCheckCircle,
 } from "react-icons/fa";
 
