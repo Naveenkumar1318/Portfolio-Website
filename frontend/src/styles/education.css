@@ -1,0 +1,694 @@
+/* ==========================================================================
+   EDUCATION ROADMAP / ROOT MAP STYLES
+   ========================================================================== */
+
+.education-section {
+  position: relative;
+  min-height: auto;
+  padding: 130px 24px 80px 24px;
+  background: radial-gradient(circle at 50% 0%, #0f172a 0%, #030712 60%, #020617 100%);
+  color: #f8fafc;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Ambient glow background */
+.edu-ambient-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(140px);
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.glow-1 {
+  top: 10%;
+  left: -150px;
+  background: radial-gradient(circle, #3b82f6, #8b5cf6);
+}
+
+.glow-2 {
+  bottom: 10%;
+  right: -150px;
+  background: radial-gradient(circle, #06b6d4, #10b981);
+}
+
+.education-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* Header */
+.education-header {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.education-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.28);
+  border-radius: 9999px;
+  color: #60a5fa;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+}
+
+.pill-pulse {
+  width: 8px;
+  height: 8px;
+  background: #60a5fa;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #60a5fa;
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
+.education-title {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+
+.education-subtitle {
+  max-width: 740px;
+  margin: 0 auto;
+  font-size: 1.08rem;
+  color: #94a3b8;
+  line-height: 1.75;
+}
+
+/* ==========================================================================
+   ROADMAP STATS STRIP
+   ========================================================================== */
+
+.roadmap-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 65px;
+}
+
+.roadmap-stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(16px);
+  transition: all 0.3s ease;
+}
+
+.roadmap-stat:hover {
+  transform: translateY(-3px);
+  border-color: rgba(96, 165, 250, 0.35);
+  background: rgba(22, 32, 54, 0.85);
+}
+
+.stat-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #60a5fa;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.branch-icon {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(167, 139, 250, 0.3);
+  color: #a78bfa;
+}
+
+.success-icon {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(52, 211, 153, 0.3);
+  color: #34d399;
+}
+
+.stat-val {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.stat-lbl {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* ==========================================================================
+   ROADMAP TREE CONTAINER & SPINE
+   ========================================================================== */
+
+.roadmap-tree-wrapper {
+  position: relative;
+  max-width: 1140px;
+  margin: 0 auto 70px auto;
+  padding: 20px 0;
+}
+
+/* Central Root Spine */
+.roadmap-center-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  background: linear-gradient(180deg, #3b82f6 0%, #8b5cf6 35%, #06b6d4 70%, #10b981 100%);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+.line-pulse-tracker {
+  position: absolute;
+  top: 0;
+  left: -4px;
+  width: 12px;
+  height: 60px;
+  background: linear-gradient(180deg, transparent, #ffffff, transparent);
+  border-radius: 6px;
+  filter: blur(1px);
+  animation: trace-down 6s infinite linear;
+}
+
+@keyframes trace-down {
+  0% { top: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 95%; opacity: 0; }
+}
+
+.roadmap-nodes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Node Row */
+.roadmap-node-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Desktop Alternating Alignments */
+.roadmap-node-row.align-left {
+  justify-content: flex-start;
+}
+
+.roadmap-node-row.align-right {
+  justify-content: flex-end;
+}
+
+/* Pin positioned precisely on central spine */
+.roadmap-node-pin {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pin-halo {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: var(--node-color, #3b82f6);
+  opacity: 0.25;
+  filter: blur(6px);
+  animation: halo-pulse 3s infinite ease-in-out;
+}
+
+@keyframes halo-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.25; }
+  50% { transform: scale(1.3); opacity: 0.45; }
+}
+
+.pin-core {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #020617;
+  border: 3px solid var(--node-color, #3b82f6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px var(--node-color, #3b82f6);
+}
+
+.pin-number {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* Branch connector */
+.node-connector-branch {
+  position: absolute;
+  top: 50%;
+  width: 45px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--node-color, #3b82f6), rgba(255, 255, 255, 0.15));
+  z-index: 5;
+}
+
+.align-left .node-connector-branch {
+  left: calc(50% - 45px);
+  transform: translateY(-50%);
+}
+
+.align-right .node-connector-branch {
+  left: 50%;
+  transform: translateY(-50%);
+}
+
+/* Milestone Card */
+.roadmap-card {
+  width: calc(50% - 60px);
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 28px 30px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.roadmap-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--node-color, #3b82f6), transparent);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.roadmap-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--node-color, #3b82f6);
+  background: rgba(22, 32, 54, 0.85);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.roadmap-card:hover::before {
+  opacity: 1;
+}
+
+/* Card Header */
+.card-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.stage-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--node-color, #60a5fa);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.status-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.status-pill.in-progress {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  color: #34d399;
+}
+
+.status-pill.completed {
+  background: rgba(148, 163, 184, 0.15);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  color: #cbd5e1;
+}
+
+.card-main-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.card-icon-bubble {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.milestone-degree {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+  line-height: 1.25;
+}
+
+.milestone-institution {
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.milestone-desc {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+/* Skills Chips */
+.skills-learned-section {
+  margin-bottom: 18px;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.chips-label {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.chips-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skill-chip {
+  font-size: 0.76rem;
+  font-weight: 600;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  color: #93c5fd;
+  padding: 3px 10px;
+  border-radius: 9999px;
+}
+
+/* Card Meta Footer */
+.card-footer-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.meta-item svg {
+  color: #60a5fa;
+}
+
+.meta-score-badge {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  color: #34d399;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 9999px;
+}
+
+/* ==========================================================================
+   DESTINATION CARD
+   ========================================================================== */
+
+.roadmap-destination-card {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.35), rgba(15, 23, 42, 0.7));
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 24px;
+  padding: 28px 34px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.dest-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(96, 165, 250, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #60a5fa;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
+}
+
+.dest-text h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+}
+
+.dest-text p {
+  font-size: 0.92rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN / MOBILE ROADMAP
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .education-section {
+    padding: 55px 16px 35px 16px;
+    min-height: auto;
+  }
+
+  .education-header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .education-title {
+    text-align: center;
+    font-size: 2.2rem;
+  }
+
+  .education-subtitle {
+    text-align: center;
+    font-size: 0.96rem;
+  }
+
+  .roadmap-stats-strip {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 35px;
+  }
+
+  .roadmap-stat {
+    text-align: left;
+    padding: 14px 18px;
+  }
+
+  .roadmap-tree-wrapper {
+    margin-bottom: 35px;
+  }
+
+  .roadmap-nodes-container {
+    gap: 28px;
+  }
+
+  /* Move root spine to the left side */
+  .roadmap-center-line {
+    left: 16px;
+    transform: none;
+  }
+
+  .roadmap-node-row {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 44px;
+    text-align: left;
+  }
+
+  .roadmap-node-row.align-left,
+  .roadmap-node-row.align-right {
+    justify-content: flex-start;
+  }
+
+  .roadmap-node-pin {
+    left: 16px;
+    top: 22px;
+    transform: translate(-50%, 0);
+  }
+
+  .node-connector-branch {
+    display: none;
+  }
+
+  .roadmap-card {
+    width: 100%;
+    padding: 20px 16px;
+    text-align: left;
+    border-radius: 20px;
+  }
+
+  .card-main-header {
+    align-items: flex-start;
+    text-align: left;
+    gap: 14px;
+  }
+
+  .card-main-header div {
+    text-align: left;
+  }
+
+  .milestone-degree {
+    font-size: 1.25rem;
+    text-align: left;
+  }
+
+  .milestone-institution {
+    font-size: 0.92rem;
+    text-align: left;
+  }
+
+  .milestone-desc {
+    font-size: 0.88rem;
+    text-align: left;
+  }
+
+  .skills-learned-section {
+    text-align: left;
+    padding: 10px 12px;
+  }
+
+  .chips-label {
+    text-align: left;
+  }
+
+  .chips-list {
+    justify-content: flex-start;
+  }
+
+  .card-footer-meta {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .roadmap-destination-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 22px 16px;
+    border-radius: 20px;
+    align-items: center;
+  }
+
+  .dest-text h3 {
+    text-align: center;
+    font-size: 1.15rem;
+  }
+
+  .dest-text p {
+    text-align: center;
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .education-title {
+    font-size: 2.1rem;
+  }
+
+  .milestone-degree {
+    font-size: 1.15rem;
+  }
+
+  .card-main-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .card-footer-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

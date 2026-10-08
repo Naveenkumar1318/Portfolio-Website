@@ -1,0 +1,436 @@
+/* ==========================================================================
+   HOMEPAGE / HERO SECTION STYLES
+   ========================================================================== */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 130px 40px 80px 40px;
+  background: radial-gradient(circle at 50% 0%, #0f172a 0%, #030712 60%, #020617 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 720px;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.28);
+  color: #60a5fa;
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin-bottom: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+}
+
+.intro-text {
+  color: #94a3b8;
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.hero-content h1 {
+  font-size: clamp(3rem, 6vw, 4.8rem);
+  line-height: 1.1;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+  letter-spacing: -0.03em;
+}
+
+.hero-content h1 span {
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 60%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content h2 {
+  font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+  margin-bottom: 22px;
+  font-weight: 700;
+}
+
+.highlight {
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  font-size: 1.08rem;
+  color: #94a3b8;
+  line-height: 1.75;
+  margin-bottom: 35px;
+  max-width: 640px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.55);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.secondary-btn:hover {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.12);
+  transform: translateY(-3px);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat-card {
+  padding: 18px 16px;
+  text-align: center;
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(96, 165, 250, 0.35);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+}
+
+.stat-card h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 30%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.stat-card p {
+  color: #94a3b8;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ==========================================================================
+   HERO AVATAR & FLOATING ICONS (DESKTOP)
+   ========================================================================== */
+
+.hero-image {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  width: 420px;
+  height: 420px;
+  max-width: 100%;
+}
+
+.image-wrapper {
+  width: 360px;
+  height: 360px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+  box-shadow: 0 0 55px rgba(59, 130, 246, 0.35);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: glow 4s ease-in-out infinite;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 10%;
+  border-radius: 50%;
+  background: #0b1120;
+}
+
+.floating-icon {
+  position: absolute;
+  width: 66px;
+  height: 66px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  font-size: 30px;
+  transition: all 0.35s ease;
+  animation: float 4s ease-in-out infinite;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  z-index: 10;
+}
+
+.floating-icon:hover {
+  transform: scale(1.15);
+  border-color: rgba(96, 165, 250, 0.6);
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.35);
+}
+
+.python { top: 10px; left: 18px; animation-delay: 0s; }
+.fastapi { top: 40px; right: 10px; animation-delay: 1s; }
+.react { bottom: 40px; left: 10px; animation-delay: 2s; }
+.postgres { bottom: 10px; right: 18px; animation-delay: 3s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.3); }
+  50% { box-shadow: 0 0 70px rgba(139, 92, 246, 0.45); }
+}
+
+/* ==========================================================================
+   TABLET & MOBILE RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 95px 20px 45px 20px;
+    gap: 28px;
+    align-items: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-badge {
+    margin: 0 auto 16px auto;
+  }
+
+  .intro-text {
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    text-align: center;
+  }
+
+  .hero-content h2 {
+    text-align: center;
+  }
+
+  .hero-description {
+    margin: 0 auto 25px auto;
+    text-align: center;
+    max-width: 600px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 540px;
+    width: 100%;
+    margin: 0 auto;
+    gap: 12px;
+  }
+
+  .hero-image {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px auto;
+  }
+
+  .image-wrapper {
+    width: 240px !important;
+    height: 240px !important;
+    min-width: 240px !important;
+    min-height: 240px !important;
+    max-width: 240px !important;
+    max-height: 240px !important;
+    aspect-ratio: 1 / 1 !important;
+    border-radius: 50% !important;
+    margin: 0 auto !important;
+    box-shadow: 0 0 35px rgba(59, 130, 246, 0.35);
+  }
+
+  .floating-icon {
+    display: flex !important;
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+    border-radius: 15px;
+  }
+
+  .python { top: 8px; left: 12px; }
+  .fastapi { top: 32px; right: 8px; }
+  .react { bottom: 32px; left: 8px; }
+  .postgres { bottom: 8px; right: 12px; }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 50px 16px 30px 16px;
+    gap: 20px;
+  }
+
+  .hero-badge {
+    font-size: 0.78rem;
+    padding: 6px 14px;
+    margin: 0 auto 12px auto;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.15rem;
+    margin-bottom: 8px;
+    line-height: 1.15;
+  }
+
+  .hero-content h2 {
+    font-size: 1.18rem;
+    margin-bottom: 14px;
+  }
+
+  .hero-description {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-bottom: 22px;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 0.92rem;
+    text-align: center;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .stat-card {
+    padding: 12px 10px;
+    border-radius: 14px;
+    text-align: center;
+  }
+
+  .stat-card h3 {
+    font-size: 1.35rem;
+  }
+
+  .hero-image {
+    width: 280px;
+    height: 280px;
+    margin: 0 auto 5px auto;
+  }
+
+  .image-wrapper {
+    width: 200px !important;
+    height: 200px !important;
+    min-width: 200px !important;
+    min-height: 200px !important;
+    max-width: 200px !important;
+    max-height: 200px !important;
+    aspect-ratio: 1 / 1 !important;
+    border-radius: 50% !important;
+  }
+
+  .floating-icon {
+    display: flex !important;
+    width: 46px;
+    height: 46px;
+    font-size: 22px;
+    border-radius: 13px;
+  }
+
+  .python { top: 6px; left: 8px; }
+  .fastapi { top: 26px; right: 6px; }
+  .react { bottom: 26px; left: 6px; }
+  .postgres { bottom: 6px; right: 8px; }
+}
